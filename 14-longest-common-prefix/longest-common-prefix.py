@@ -1,19 +1,16 @@
 class Solution:
-    def longestCommonPrefix(self, strs: list[str]) -> str:
-        if not strs:
+    def longestCommonPrefix(self, s: list[str]) -> str:
+        if not s:
             return ""
+
+
+
+        for i in range(len(s[0])):
+            char = s[0][i]
+
+            for j in range(1,len(s)):
+                if i == len (s[j]) or s[j][i] != char:
+                    return s[0][:i]
+
         
-        # Array ko lexicographically (alphabetically) sort karte hain
-        strs.sort()
-        
-        # Pehla aur aakhri string lete hain
-        first = strs[0]
-        last = strs[-1]
-        
-        i = 0
-        # Dono strings mein jab tak characters match kar rahe hain, aage badhein
-        while i < len(first) and i < len(last) and first[i] == last[i]:
-            i += 1
-            
-        # Common prefix slice return kar dein
-        return first[:i]
+        return s[0]
