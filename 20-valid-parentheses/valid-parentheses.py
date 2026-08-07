@@ -2,28 +2,26 @@ class Solution:
     def isValid(self, s: str) -> bool:
 
 
-        dabba = []
-        
-        open_bracket = "({["
+        stack = []
+        opening_bracket  =  "([{"
 
-        for i in s :
-            if i in open_bracket:
-                dabba.append(i)
+        for i in s:
+            if i in opening_bracket:
+                stack.append(i)
 
             else:
-                if len(dabba) == 0:
-                    return False
-                    
-                
-                top = dabba.pop()
-
-                if i == ")" and top != "(":
-                    return False 
-                elif i =="]" and top != "[":
+                if len(stack) == 0 :
                     return False
 
-                elif i == '}' and top != "{":
+                top_bracket = stack.pop()
+
+                if i == ")" and top_bracket != "(":
                     return False
 
-        return len(dabba) == 0
-                                             
+                if i == "]" and top_bracket != "[":
+                    return False
+                        
+                if i == "}" and top_bracket != "{":
+                    return False
+
+        return len(stack) == 0
