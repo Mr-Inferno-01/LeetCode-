@@ -5,5 +5,4 @@ class Solution:
 
         else:
             return haystack.index(needle)
-        
-        
+     
