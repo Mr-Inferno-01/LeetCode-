@@ -11,7 +11,7 @@ class Solution:
             result.append(chr(ord('A') + remainder))
 
 
-            columnNumber //= 26
+            columnNumber = columnNumber // 26  #  also we can replace with columnNumber //= 26   
 
 
         return "".join(reversed(result))
