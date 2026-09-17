@@ -1,17 +1,16 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-       
-        look = {}
 
+        store = {}
 
-        for i in range(len(nums)):
-            required_nums = target - nums[i]
+        for i in  range(len(nums)):
+            need = target - nums[i]
 
-            if  required_nums in look:
-                return[look[required_nums] , i]
+            if need in store:
+                return [store[need], i]
 
-            look[nums[i]] = i
+            
+            store[nums[i]] = i
 
                 
 
