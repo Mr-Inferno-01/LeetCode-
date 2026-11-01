@@ -5,8 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # def sortedArrayToBST(self, nums: list[int]) -> TreeNode | None:
-    def sortedArrayToBST(self,nums):
+    def sortedArrayToBST(self, nums: list[int]) -> TreeNode | None:
+    # def sortedArrayToBST(self,nums):
 
         def build(left, right):
 
